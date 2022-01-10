@@ -1,5 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
+// para convertir el componente a json y utilizar snapshot
+import { create } from 'react-test-renderer';
 import ProviderMock from '../__mocks__/ProviderMock';
 import Header from '../components/Header';
 
@@ -23,5 +25,17 @@ describe('<Header />', () => {
     );
 
     expect(header.find('.Header-title').text()).toEqual('Platzi Store');
+  });
+});
+
+describe('Header Snapshot', () => {
+  test('Comprobar el snapshot de header', () => {
+    const header = create(
+      <ProviderMock>
+        <Header />
+      </ProviderMock>
+    );
+
+    expect(header.toJSON()).toMatchSnapshot();
   });
 });

@@ -59,6 +59,7 @@
     "eslint-plugin-react": "^7.14.3",
     "jest": "^27.4.7",
     "prettier": "^1.19.1",
+    "react-test-renderer": "^17.0.2",
     "webpack-dev-server": "^3.9.0"
   },
   "bugs": {
@@ -73,6 +74,5 @@
       "\\.(styl|css)$": "<rootDir>/src/__mocks__/styleMock.js"
     },
     "testEnvironment": "jsdom"
-
   }
 }
